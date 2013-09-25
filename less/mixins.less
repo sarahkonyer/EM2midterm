@@ -73,6 +73,11 @@
 	opacity: @opacity / 100;
 }
 
+.box-shadow(@shadow) {
+  -webkit-box-shadow: @shadow; // iOS <4.3 & Android <4.1
+          box-shadow: @shadow;
+}
+
 .placeholder(@color: @input-color-placeholder) {
   &:-moz-placeholder            { color: @color; } // Firefox 4-18
   &::-moz-placeholder           { color: @color; } // Firefox 19+
@@ -116,6 +121,24 @@
     background-image: url(@at2x_path);
     background-size: @w @h;
   }
+}
+
+
+//utils
+.size(@width; @height) {
+  width: @width;
+  height: @height;
+}
+.square(@size) {
+  .size(@size; @size);
+}
+
+.text-hide() {
+  font: ~"0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
 }
 
 // Grid
