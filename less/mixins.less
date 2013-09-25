@@ -47,6 +47,14 @@
 	border-top-left-radius: @radius;
 }
 
+.border-radius-all(@radius)
+{
+	.border-left-radius(@radius);
+	.border-bottom-radius(@radius);
+	.border-right-radius(@radius);
+	.border-top-radius(@radius);
+}
+
 
 .transition(@transition) {
   -webkit-transition: @transition;
@@ -133,12 +141,25 @@
   .size(@size; @size);
 }
 
+// Center-align a block level element
+.center-block() {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .text-hide() {
   font: ~"0/0" a;
   color: transparent;
   text-shadow: none;
   background-color: transparent;
   border: 0;
+}
+
+.text-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 // Grid
